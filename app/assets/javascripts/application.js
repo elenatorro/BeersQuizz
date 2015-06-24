@@ -58,13 +58,7 @@ angular.module('BeersQuizzApp')
     }
 
     $scope.check = function(form, index) {
-    	console.log(form);
-    	console.log($scope.beers[index]);
-    		if ((form.abv == $scope.beers[index].abv) 
-    			&& (form.category == $scope.beers[index].category)) {
-    			$scope.beers[index]['result'] = true;
-    		} else {
-    			$scope.beers[index]['result'] = false;
-    		}
+    	return ((form.abv == $scope.beers[index].abv) 
+    			&& (form.category == $scope.beers[index].category))
     }
  }]);
