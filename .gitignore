@@ -20,4 +20,4 @@
 .DS_store
 config/secrets.yml
 client_secrets.json
-config/database.yml
+/config/database.yml
