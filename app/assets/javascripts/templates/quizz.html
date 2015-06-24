@@ -1,0 +1,29 @@
+<div class="row">
+	<div class="col-md-12 beer-block">
+		<h2>START QUIZZ</h2>
+		<button ng-click="start()" class="btn btn-success">Start!</button>
+		<h3>Guess the Alcohol By Volume and the Category of the following beers. If you fail, you drink!</h3>
+	</div>
+	<div class="col-md-12 beer-block" ng-show="beers" ng-repeat="beer in beers track by $index">
+		<form class="form-inline" name="{{beer.name}}" ng-class="{'correct' : form.correct, 'wrong' : form.wrong}">
+	  		<h4>{{beer.name}}</h4>
+			<div class="form-group">
+		    	<label for="beerAvb">Alcohol by Volume?</label>
+		    	<input type="float" ng-model="form.abv" class="form-control" id="beerAbv" placeholder="ex: 5.2">
+		  	</div>
+		  	<div class="form-group">
+		  		<label>Category</label>
+		  		<select class="form-control" ng-model="form.category" ng-options="cat_name as cat_name for cat_name in categories">
+      				<option value="cat_name">Choose category</option>
+    			</select>
+		  	</div>
+		  	<button type="submit" class="btn btn-default" ng-click="check(form, $index)">Check!</button>
+		  		<span class="alert alert-danger" ng-show="beer.result == false" role="alert">
+				  WRONG!
+				</span>
+				<span class="alert alert-success" ng-show="beer.result == true" role="alert">
+				  CORRECT!
+				</span>
+		</form>
+	</div>
+</div>

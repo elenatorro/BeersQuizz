@@ -1,0 +1,1 @@
+Rails.application.config.assets.precompile += ['include.js', 'include.css', 'include.js']

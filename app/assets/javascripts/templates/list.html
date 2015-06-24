@@ -1,0 +1,36 @@
+<div class="row">
+	<div class="col-md-12 beer-block">
+		<form>
+		  <div class="form-group">
+		    <label for="beerName">Beer Name</label>
+		    <input type="text" ng-model="beerName" class="form-control" id="beerName" placeholder="Beer Name">
+		  </div>
+		<button type="submit" class="btn btn-default" ng-click="search()">Search</button>
+		</form>
+		<div ng-show="beers" ng-repeat="beer in beers track by $index">
+			<table class="table table-striped">
+			 	<tr>
+			    	<td>Name:</td>
+			    	<td>{{beer.name}}</td>
+			    </tr>
+			    <tr>
+				    <td>Alcohol by volume:</td> 
+				    <td>{{beer.abv}}</td>
+				</tr>
+			    <tr>
+			    	<td>Category:</td>
+			    	 <td>{{categories[beer.cat_id-1]}}</td>
+			    </tr>
+			    <tr>
+			    	<td>Style:</td>
+			    	<td>{{beer.style_id}}</td>
+			    </tr>
+			    <tr>
+			    	<td>Description:</td>
+			    	<td>{{beer.descript}}</td> 
+			    </tr>
+			</table>
+			</div>
+		</div>
+		<a class="btn btn-large btn-default" href="/quizz">Go to the quizz!</a>
+</div>

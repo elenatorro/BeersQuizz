@@ -14,3 +14,10 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+/vendor
+/public
+.gulpfile
+.DS_store
+config/secrets.yml
+client_secrets.json
+/config/database.yml

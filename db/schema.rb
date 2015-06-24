@@ -28,4 +28,31 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "last_mod",                 null: false
   end
 
+  create_table "breweries", force: true do |t|
+    t.string   "name",                default: "", null: false
+    t.string   "address1",            default: "", null: false
+    t.string   "address2",            default: "", null: false
+    t.string   "city",                default: "", null: false
+    t.string   "state",               default: "", null: false
+    t.string   "code",     limit: 25, default: "", null: false
+    t.string   "country",             default: "", null: false
+    t.string   "phone",    limit: 50, default: "", null: false
+    t.string   "website",             default: "", null: false
+    t.string   "filepath",            default: "", null: false
+    t.text     "descript",                         null: false
+    t.integer  "add_user",            default: 0,  null: false
+    t.datetime "last_mod",                         null: false
+  end
+
+  create_table "categories", force: true do |t|
+    t.string   "cat_name", default: "", null: false
+    t.datetime "last_mod",              null: false
+  end
+
+  create_table "styles", force: true do |t|
+    t.integer  "cat_id",     default: 0,  null: false
+    t.string   "style_name", default: "", null: false
+    t.datetime "last_mod",                null: false
+  end
+
 end
